@@ -1,0 +1,128 @@
+/* 전체 */
+html, body{
+    background-color: gray;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 창 */
+.profile{
+    background-color: white;
+    border: 1px solid black;
+    width: 500px;
+    height: 700px;
+    margin-top: 5%;
+}
+
+/* 프로필 배경 */
+.bg{
+    background-color: green;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+/* 폼 */
+.empty{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 프로필 사진 */
+.circle{
+    background-image: url("누워.png");
+    border: 3px solid black;
+    border-radius: 300px;
+    width: 250px;
+    height: 250px;
+    transition: transform 1s ease-in-out;
+}
+.circle:hover{
+    transform: scale(1.2);
+}
+
+/* 이름 */
+.text{
+    text-align: center;
+}
+
+/* 팔로우 */
+.follow{
+    background-color: gold;
+    font-size: 30px;
+    width: 250px;
+    height: 50px;
+    transition: transform 0.5s ease-in-out
+}
+.follow:active{
+    transform: scale(1.2);
+}
+
+/* 자기소개 */
+.textbox{
+    width: 95%;
+    height: 200px;
+    overflow: scroll;
+}
+
+/* 메뉴 */
+.menu{
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    justify-content: right;
+}
+
+.hbg-container{
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.hbg, 
+.hbg::before,
+.hbg::after{
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    transition: 0.5s;
+    background: black;
+}
+
+.hbg::before,
+.hbg::after{
+    content: "";
+}
+.hbg::before{
+    top: -15px;
+}
+.hbg::after{
+    top: 15px;
+}
+.toggle:checked ~ .hbg::after{
+    top: 0;
+    transform: rotate(-135deg);
+}
+.toggle:checked ~ .hbg::before{
+    top: 0;
+    transform: rotate(135deg);
+}
+.toggle:checked ~ .hbg{
+    background: white;
+}
+.toggle{
+    opacity: 0;
+}
